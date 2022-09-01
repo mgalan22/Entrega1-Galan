@@ -16,6 +16,17 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path
 
+from webapp.views import about_me, alta_usuario, crear_publicacion, del_publicacion, editar_publicacion, home, leer_mas, ver_publicaciones
+
 urlpatterns = [
     path('admin/', admin.site.urls),
+    path('/',home),
+    path('about/', about_me),
+    path('pages/<pageId>',leer_mas),
+    path('alta/', alta_usuario),
+    path('post/', crear_publicacion),
+    path('edit_post/', editar_publicacion),
+    path('del_post/', del_publicacion),
+    path('blog/', ver_publicaciones),
+
 ]
