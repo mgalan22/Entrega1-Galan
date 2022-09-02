@@ -1,16 +1,18 @@
-from ast import Pass
-from pyexpat import model
 from django.db import models
 
 
 
 # Create your models here.
-class publicaciones(models.Model):
-    titulo=models.CharField(max_length=100)
-    fecha=models.DateField()
-    contenido=models.CharField(max_length=500)
+class Posts(models.Model):
+    title=models.CharField(max_length=100)
+    date=models.DateField()
+    content=models.CharField(max_length=500)
 
-class Usuarios(models.Model):
+class Users(models.Model):
     mail=models.EmailField()
-    nombre=models.CharField(max_length=50)
+    name=models.CharField(max_length=50)
     #clave=models.CharField()   Revisar para cargar como password
+
+class Post_categories(models.Model):
+    name=models.CharField(max_length=30)
+    cant_post=models.IntegerField()

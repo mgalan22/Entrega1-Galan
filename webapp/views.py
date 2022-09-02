@@ -4,35 +4,36 @@ def home(request):
     ctx=''
     return(render,ctx)
 
-def alta_usuario(request):
+def new_user(request):
+    pass
+
+    return(render,ctx)
+
+
+def add_post(request):
+    ctx=''
+    return(render,ctx)
+
+def del_post(request):
+    pass
+    return(render,ctx)
+
+def edit_post(request):
+    pass
+    return(render,ctx)
+
+
+def view_all_posts(request):
     ctx=''
     return(render,ctx)
 
 
-def crear_publicacion(request):
-    ctx=''
-    return(render,ctx)
 
-def del_publicacion(request):
-    ctx=''
-    return(render,ctx)
-
-def editar_publicacion(request):
-    ctx=''
-    return(render,ctx)
-
-
-def ver_publicaciones(request):
-    ctx=''
-    return(render,ctx)
-
-
-
-def leer_mas(request):
-    ctx=''
+def read_more(request):
+    pass
     return(render,ctx)
 
 
 def about_me(request):
-    ctx=''
+    pass
     return(render,ctx)
