@@ -1,7 +1,8 @@
-# Proyecto final Python+Django en desarrollo (Matías Galan)
+# Entrega 1 - _Proyecto final Python+Django (Matías Galan)_
 
 _Se intenta cumplir con los requisitos básicos para el funcionamiento de un blog en linea_
 
+_El repositorio de la entrega 1 es el fork **pre-entrega**_
 
 ### Pre-requisitos 📋
 
@@ -50,7 +51,11 @@ del modelo **Posts**
 * Se vincula a GitHub donde está cargado el readme.md que se lee en este momento.
 
 
+
+#
+
 _Tratandose de un proyecto en desarrollo, hay elementos que aún no tienen uso, y herencias que se deben mejorar_
+
 * Se utiliza mal el template index.html en home.html, se debe eliminar contenido y corregir herencias.
 * Se debe cambiar en el modelo Posts, la característica content, para que sea TextArea.
 * Se debe integrar el modelo Post_categories, que permitirían asignar categorías a las publicaciones
