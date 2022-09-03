@@ -1,0 +1,26 @@
+{% extends "index.html" %}
+
+{% block title %}
+Buscando contenido
+{% endblock title %}
+
+{% block post_title %}
+Buscar publicación por título
+{% endblock post_title %}
+
+
+
+{% block content2 %}
+<h1>Que necesitas encontrar?</h1>
+
+<form action="/webapp/found_posts" method="GET">
+    {% csrf_token %}
+
+{{ form.as_p }}
+
+
+<input type="submit" value="Buscar">
+
+</form>
+
+{% endblock %}

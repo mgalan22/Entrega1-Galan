@@ -1,9 +1,11 @@
 from django.urls import path
-from webapp.views import home, all_posts, add_post
+from webapp.views import *
 
 urlpatterns = [
-    path('',home, name='WebappHome'),
-    path('post/<str:title>/<str:content>', add_post, name='WebappAdd_post'),
-    path('list/', all_posts, name='WebappAll_posts'),
-
+    path('', home, name='home'),
+    path('all_posts/', all_posts, name='all_posts'),
+    path('create/',post_form, name='post_form'),
+    path('find_post/',find_post, name='find_post'),
+    path('found_posts/',found_posts, name='found_posts'),
+    path('readme/',read_me, name='readme'),
 ]

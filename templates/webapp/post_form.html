@@ -1,0 +1,26 @@
+{% extends "index.html" %}
+
+{% block title %}
+Creando contenido
+{% endblock title %}
+
+{% block post_title %}
+Nueva publicación
+{% endblock post_title %}
+
+
+
+{% block content2 %}
+<h1>Carga tu publicacion</h1>
+
+<form action="{% url 'post_form' %}" method="POST">
+    {% csrf_token %}
+
+{{ form.as_p }}
+
+
+<input type="submit" value="Guardar">
+
+</form>
+
+{% endblock %}

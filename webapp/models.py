@@ -1,4 +1,3 @@
-from unicodedata import category
 from django.db import models
 
 
@@ -7,7 +6,7 @@ from django.db import models
 class Posts(models.Model):
     title=models.CharField(max_length=100)
     date=models.DateField()
-    content=models.CharField(max_length=500)
+    content=models.TextField()
     #category=models.CharField(max_length=30) revisar como vincular con la otra clase
 
 class Users(models.Model):

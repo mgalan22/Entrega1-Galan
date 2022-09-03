@@ -1,5 +1,28 @@
 {% extends "index.html" %}
 
-{% block posts %}
-texto que viene desde all_post.html
+{% block title %}
+Lista de publicaciones
+{% endblock title %}
+
+{% block post_title %}
+Lista de publicaciones
+{% endblock post_title %}
+
+
+{% block content2 %}
+
+    {% for post in posts %}
+
+    
+    <h2 style="text-align: center;"><strong>{{ post.title }}</strong></h2></a>
+
+    <p>{{ post.content }}</p>
+
+    <p style="text-align: right;"><sub><em>{{post.date}}</em></sub></p>
+ 
+    
+
+    <p></p>
+    {% endfor %}
+
 {% endblock %}
