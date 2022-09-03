@@ -56,7 +56,7 @@ del modelo **Posts**
 
 _Tratandose de un proyecto en desarrollo, hay elementos que aún no tienen uso, y herencias que se deben mejorar_
 
-* Se utiliza mal el template index.html en home.html, se debe eliminar contenido y corregir herencias.
+* ~~Se utiliza mal el template index.html en home.html, se debe eliminar contenido y corregir herencias.~~
 * Se debe cambiar en el modelo Posts, la característica content, para que sea TextArea.
 * Se debe integrar el modelo Post_categories, que permitirían asignar categorías a las publicaciones
 * Se debe desarrollar e integrar la característica category del modelo Posts para que se le pueda asignar de una lista desplegable la pertenencia.
