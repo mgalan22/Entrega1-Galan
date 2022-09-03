@@ -1,8 +1,7 @@
 from django.shortcuts import render
 
 def home(request):
-    ctx=''
-    return(render,ctx)
+    return render(request, 'webapp/index.html')
 
 def new_user(request):
     pass
