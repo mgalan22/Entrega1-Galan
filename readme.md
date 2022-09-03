@@ -1,4 +1,4 @@
-# Proyecto final Python+Django en desarrollo
+# Proyecto final Python+Django en desarrollo (Matías Galan)
 
 _Se intenta cumplir con los requisitos básicos para el funcionamiento de un blog en linea_
 
@@ -58,4 +58,5 @@ _Tratandose de un proyecto en desarrollo, hay elementos que aún no tienen uso, 
 * Se debe desarrollar e integrar en BD el conteo de elementos de cada categoría para poder mostrar ese dato en las consultas
 * Se debe incorporar el botón para inicio de sesión/registro de usuarios que utilizaría el modelo Users
 * Cambiar la característica password de User para que se maneje como tal.
+* Agregar condicional para la búsqueda de publicaciones con resultado nulo.
 
