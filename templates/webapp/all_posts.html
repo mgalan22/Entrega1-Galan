@@ -1,0 +1,29 @@
+{% extends "index.html" %}
+
+{% block title %}
+Lista de publicaciones
+{% endblock title %}
+
+{% block post_title %}
+Lista de publicaciones
+{% endblock post_title %}
+
+
+{% block content2 %}
+
+{% for post in posts %}
+
+    
+    <h2 style="text-align: center;"><strong>{{post.id}} - {{ post.title }}</strong></h2></a>
+<a href="{% url 'del_post' post.id %}" style="color: #ff0000;"><h6> [Eliminar] </h6></a>
+<a href="{% url 'edit_post' post.id %}" style="color: #0000ff;"><h6> [Editar] </h6></a>
+    <p>{{ post.content }}</p>
+
+    <p style="text-align: right;"><sub><em>{{post.date}}</em></sub></p>
+ 
+    
+
+    <p></p>
+{% endfor %}
+
+{% endblock %}
