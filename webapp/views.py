@@ -67,8 +67,10 @@ def edit_post(request, id):
         if formulario.is_valid():
             data = formulario.cleaned_data
             
+            post_to_edit.id = data.get('id')
             post_to_edit.title = data.get('titulo')
             post_to_edit.content = data.get('contenido')
+
 
             post_to_edit.save()
 
