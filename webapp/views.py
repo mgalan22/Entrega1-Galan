@@ -1,4 +1,5 @@
 from datetime import datetime
+
 from django.shortcuts import render,redirect
 from webapp.forms import PostForm, SearchPost
 from webapp.models import Posts
@@ -14,8 +15,8 @@ def post_form(request):
 
         if formulario.is_valid():
             data = formulario.cleaned_data
-            post1=Posts(title=data.get('titulo'),content=data.get('contenido'), date= datetime.now())
-            post1.save()
+            new_post=Posts(title=data.get('titulo'),content=data.get('contenido'), date= datetime.now())
+            new_post.save()
 
             return redirect('all_posts')
 
@@ -29,7 +30,7 @@ def all_posts(request):
    posts= Posts.objects.all()
    ctx={'posts': posts}
 
-   return render(request, 'webapp/all_posts.html',ctx)
+   return render(request, 'webapp/pages.html',ctx)
 
 def find_post(request):
 
@@ -44,7 +45,7 @@ def found_posts(request):
     posts= Posts.objects.filter(title__icontains=titulo)
     ctx = { 'posts' : posts }
 
-    return render(request, 'webapp/all_posts.html',ctx)
+    return render(request, 'webapp/pages.html',ctx)
 
 def del_post(request, id):
     post_del = Posts.objects.get(id=id)
@@ -53,12 +54,9 @@ def del_post(request, id):
 
     return redirect('all_posts')
 
-def read_me(request):
-    return render(request, 'webapp/readme.md')
-
-def edit_post(request, id):
+def edit_post(request, post_id):
     
-    post_to_edit= Posts.objects.get(id=id)
+    post_to_edit= Posts.objects.get(id=post_id)
 
 
     if request.method == 'POST':
@@ -67,29 +65,29 @@ def edit_post(request, id):
         if formulario.is_valid():
             data = formulario.cleaned_data
             
-            post_to_edit.id = data.get('id')
-            post_to_edit.title = data.get('titulo')
-            post_to_edit.content = data.get('contenido')
-
-
-            post_to_edit.save()
+            Posts.objects.filter(id=post_id).update(
+            title=data.get('titulo'),
+            content=data.get('contenido'),
+            date=datetime.now()
+            ) 
+            
+            messages.info(request, f"El post número {post_id}, fue editado")
 
             return redirect('all_posts')
-
-    ctx={
-        'form': PostForm(
-            initial={
-                'Título': post_to_edit.title,
-                'ID': post_to_edit.id
+    
+    ctx={'form':PostForm(initial={'titulo': post_to_edit.title,
+               'contenido': post_to_edit.content
                 }
-            )
-        }
+            )}
+        
 
 
-    return render(request,'webapp/update_form.html',ctx)
+    return render(request,'webapp/update_form.html', ctx)
 
 
     
+def read_me(request):
+    return render(request, 'webapp/readme.md')
 
 def read_more(request):
     pass

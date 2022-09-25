@@ -1,25 +1,25 @@
 {% extends "index.html" %}
 
 {% block title %}
-Actualizando contenido
+Inicio de sesión
 {% endblock title %}
 
 {% block post_title %}
-Editar publicación
+Inicio de sesión
 {% endblock post_title %}
 
 
 
 {% block content2 %}
-<h1>Edita tu publicacion</h1>
+<h1>Usa tus credenciales</h1>
 
-<form method="POST">
+<form action="{% url 'post_form' %}" method="POST">
     {% csrf_token %}
 
 {{ form.as_p }}
 
 
-<input type="submit" value="Guardar">
+<input type="submit" value="Conectarse">
 
 </form>
 
