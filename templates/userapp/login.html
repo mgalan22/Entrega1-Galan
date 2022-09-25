@@ -1,11 +1,11 @@
 {% extends "index.html" %}
 
 {% block title %}
-Inicio de sesión
+{{ nombre_form }}
 {% endblock title %}
 
 {% block post_title %}
-Inicio de sesión
+{{ nombre_form }}
 {% endblock post_title %}
 
 
@@ -13,13 +13,13 @@ Inicio de sesión
 {% block content2 %}
 <h1>Usa tus credenciales</h1>
 
-<form action="{% url 'post_form' %}" method="POST">
+<form action="" method="POST">
     {% csrf_token %}
 
 {{ form.as_p }}
 
 
-<input type="submit" value="Conectarse">
+<input type="submit" value="{{ nombre_form }}">
 
 </form>
 

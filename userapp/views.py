@@ -1,7 +1,8 @@
 from django.shortcuts import render, redirect
-from django.contrib.auth.forms import AuthenticationForm
+from django.contrib.auth.forms import AuthenticationForm, UserCreationForm
 from django.contrib.auth import authenticate,login
 from django.contrib import messages
+from userapp.forms import UserRegisterForm
 
 def login_request(request):
    
@@ -25,11 +26,35 @@ def login_request(request):
         else:
             messages.info(request, 'inicio de sesion fallido!')
 
-        return redirect('AppCoderInicio')
+        return redirect('/')
 
     ctx = {
         'form': AuthenticationForm(),
-        'name_submit': 'Login'
+        'nombre_form': 'Login'
+    }
+
+    return render(request, 'userapp/login.html', ctx)
+
+
+def register(request):
+    if request.method == 'POST':
+
+        form = UserRegisterForm(request.POST)
+
+        if form.is_valid():
+
+            form.save()
+
+            messages.info(request, 'Usuario registrado satisfactoriamente!')
+        
+        else:
+            messages.info(request, 'Tu usuario no puso ser registrado!')
+        
+        return redirect('/')
+
+    ctx = {
+        'form': UserRegisterForm(),
+        'nombre_form': 'Registro'
     }
 
     return render(request, 'userapp/login.html', ctx)
