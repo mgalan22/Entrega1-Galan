@@ -2,7 +2,7 @@
 
 
 {% block title %}
-Lista de publicaciones
+{{post_title}}
 {% endblock title %}
 
 {% block post_title %}
@@ -12,11 +12,13 @@ Lista de publicaciones
 
 {% block content2 %}
 
-{% for post in posts %}
+{% for post in post %}
 
 
 <h2 style="text-align: center;"><strong>{{post.id}} - {{ post.title }}</strong></h2></a>
 <!--Button eliminar-->
+
+
 <center>
     <table align="right" cellspacing="0" cellpadding="0" width="100%">
       <tr>
@@ -24,11 +26,11 @@ Lista de publicaciones
           <table border="0" class="mobile-button" cellspacing="0" cellpadding="0">
             <tr>
               <td align="right" bgcolor="#e93333" style="background-color: #e93333; margin: auto; max-width: 600px; -webkit-border-radius: 10px; -moz-border-radius: 10px; border-radius: 10px; padding: 15px 20px; " width="100%">
-              <!--[if mso]>&nbsp;<![endif]-->
-                  <a href="{% url 'del_post' post.id %}" target="_blank" style="13px; font-family: Century Gothic, Times, serif; color: #ffffff; font-weight:normal; text-align:center; background-color: #e93333; text-decoration: none; border: none; -webkit-border-radius: 10px; -moz-border-radius: 10px; border-radius: 10px; display: inline-block;">
+              
+                  <a href="{% url 'del_post' post.id %}" target="_self" style="13px; font-family: Century Gothic, Times, serif; color: #ffffff; font-weight:normal; text-align:center; background-color: #e93333; text-decoration: none; border: none; -webkit-border-radius: 10px; -moz-border-radius: 10px; border-radius: 10px; display: inline-block;">
                       <span style="font-size: 13px; font-family: Century Gothic, Times, serif; color: #ffffff; font-weight:normal; line-height:1.5em; text-align:center;">Eliminar</span>
                 </a>
-              <!--[if mso]>&nbsp;<![endif]-->
+              
               </td>
             </tr>
           </table>
@@ -45,11 +47,11 @@ Lista de publicaciones
           <table border="0" class="mobile-button" cellspacing="0" cellpadding="0">
             <tr>
               <td align="right" bgcolor="#3393e9" style="background-color: #3393e9; margin: auto; max-width: 600px; -webkit-border-radius: 10px; -moz-border-radius: 10px; border-radius: 10px; padding: 15px 20px; " width="100%">
-              <!--[if mso]>&nbsp;<![endif]-->
-                  <a href="{% url 'edit_post' post.id %}" target="_blank" style="13px; font-family: Century Gothic, Times, serif; color: #ffffff; font-weight:normal; text-align:center; background-color: #3393e9; text-decoration: none; border: none; -webkit-border-radius: 10px; -moz-border-radius: 10px; border-radius: 10px; display: inline-block;">
+              
+                  <a href="{% url 'edit_post' post.id %}" target="_self" style="13px; font-family: Century Gothic, Times, serif; color: #ffffff; font-weight:normal; text-align:center; background-color: #3393e9; text-decoration: none; border: none; -webkit-border-radius: 10px; -moz-border-radius: 10px; border-radius: 10px; display: inline-block;">
                       <span style="font-size: 13px; font-family: Century Gothic, Times, serif; color: #ffffff; font-weight:normal; line-height:1.5em; text-align:center;">Editar</span>
                 </a>
-              <!--[if mso]>&nbsp;<![endif]-->
+              
               </td>
             </tr>
           </table>
@@ -57,9 +59,12 @@ Lista de publicaciones
       </tr>
     </table>
    </center>
+
+   
+
 <p>{{ post.content }}</p>
 
-<p style="text-align: right;"><sub><em>{{post.date}}</em></sub></p>
+<p style="text-align: right;"><sub><em>Fecha de publicación: {{post.date}}</em></sub></p>
   
 
 

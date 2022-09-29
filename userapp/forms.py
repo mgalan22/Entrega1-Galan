@@ -8,9 +8,8 @@ from django.contrib.auth.models import User
 class UserRegisterForm(UserCreationForm):
 
     email = forms.EmailField()
-    name = forms.CharField()
-    last_name = forms.CharField()
+        
 
     class Meta:
         model = User 
-        fields = ('username','email','name','last_name')
+        fields = ('username','email')

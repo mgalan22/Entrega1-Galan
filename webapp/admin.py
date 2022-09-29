@@ -1,6 +1,6 @@
 from django.contrib import admin
-from webapp.models import Post_categories, Posts, Users
+from webapp.models import Post_category, Post, User
 
-admin.site.register(Posts)
-admin.site.register(Users)
-admin.site.register(Post_categories)
+admin.site.register(Post)
+admin.site.register(User)
+admin.site.register(Post_category)

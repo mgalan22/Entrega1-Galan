@@ -35,7 +35,6 @@ def login_request(request):
 
     return render(request, 'userapp/login.html', ctx)
 
-
 def register(request):
     if request.method == 'POST':
 
@@ -48,7 +47,7 @@ def register(request):
             messages.info(request, 'Usuario registrado satisfactoriamente!')
         
         else:
-            messages.info(request, 'Tu usuario no puso ser registrado!')
+            messages.info(request, 'Error de registro, los datos no se guardaron')
         
         return redirect('/')
 
