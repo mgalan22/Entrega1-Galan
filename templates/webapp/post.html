@@ -1,0 +1,23 @@
+{% extends "index.html" %}
+
+{% block title %}
+{{post.title}}
+{% endblock title %}
+
+{% block post_title %}
+{{id}} - {{ title }}
+{% endblock post_title %}
+
+
+
+{% block content2 %}
+
+{{ content }}
+
+<br>
+<br>
+<br>
+
+<p style="text-align: right;"><sub><em>Fecha de publicación: {{date}}</em></sub></p>
+
+{% endblock %}
