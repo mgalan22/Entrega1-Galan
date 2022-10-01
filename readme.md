@@ -2,24 +2,20 @@
 
 _Se intenta cumplir con los requisitos básicos para el funcionamiento de un blog en linea_
 
-_El repositorio de la entrega 1 es el fork **pre-entrega**_
+_El repositorio de la entrega final es el fork **entrega-final**_
 
 ### Pre-requisitos 📋
 
-_Ninguno, se hizo push del proyecto completo, incluyendo la base de datos que ya está en uso, no se instalaron complementos extra_
+_revisar requeriments.txt_
 
 ## Datos y conexiones
 
-- La applicación **webapp** contiene todas las vistas, URLs, modelos y formularios:
-views.py
-urls.py
-models.py
-forms.py
-
+- La aplicación **webapp** contiene todas las vistas, URLs, modelos y formularios de acceso público.
+- La aplicación **userapp** contiene todas las vistas, URLs, modelos y formularios de acceso restringido.
 - El sitio utiliza a index.html en el directorio **/templates** para tomar las herencias de diseño y CSS.
 
 ## Pantallas y funcionalidades
-_Todos los links en el sitio son funcionales_
+
 
 ### - Redactar artículo
 * Llama a la vista **post_form(request)**, esta toma el formulario **PostForm** de /webapp/forms.py, vinculado al modelo Posts con sus tres características
@@ -50,10 +46,12 @@ del modelo **Posts**
 ### - Readme
 * Se vincula a GitHub donde está cargado el readme.md que se lee en este momento.
 
-
+### - Menú Login y Registro
+* Se verifica el estado de la variable global User, si es "null" el HTML muestra la opción de inicio de sesión. Las vistas marcadas con decoradores @login_required van a solicitar autenticación por parte del usuario (Redactar articulo, edición de usuario, carga de imágenes)
+* Si se verifica que la variable global User no es "null", el HTML muestra los datos de la sesión iniciada en el footer
+* Se habilita al link de "Conectado como: <nombre de usuario>" para la edición del perfil.
 
 #
-
 _Tratandose de un proyecto en desarrollo, hay elementos que aún no tienen uso, y herencias que se deben mejorar_
 
 * ~~Se utiliza mal el template index.html en home.html, se debe eliminar contenido y corregir herencias.~~
