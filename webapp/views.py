@@ -102,4 +102,4 @@ def read_me(request):
     return render(request, 'webapp/readme.md')
 
 def about_me(request):
-    return render(request, '/about')
+    return render(request, 'webapp/about.html')

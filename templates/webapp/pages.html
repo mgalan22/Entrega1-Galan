@@ -16,58 +16,33 @@ Lista de publicaciones
 
 
 <h2 style="text-align: center;"><strong>{{post.id}} - {{ post.title }}</strong></h2></a>
-<!--Button eliminar-->
 
+<!-- botones eliminar editar-->
+<br>
 
-<!-- <center>
-    <table align="right" cellspacing="0" cellpadding="0" width="100%">
-      <tr>
-        <td align="right" style="padding: 10px;">
-          <table border="0" class="mobile-button" cellspacing="0" cellpadding="0">
-            <tr>
-              <td align="right" bgcolor="#e93333" style="background-color: #e93333; margin: auto; max-width: 600px; -webkit-border-radius: 10px; -moz-border-radius: 10px; border-radius: 10px; padding: 15px 20px; " width="100%">
-              
-                  <a href="{% url 'del_post' post.id %}" target="_self" style="13px; font-family: Century Gothic, Times, serif; color: #ffffff; font-weight:normal; text-align:center; background-color: #e93333; text-decoration: none; border: none; -webkit-border-radius: 10px; -moz-border-radius: 10px; border-radius: 10px; display: inline-block;">
-                      <span style="font-size: 13px; font-family: Century Gothic, Times, serif; color: #ffffff; font-weight:normal; line-height:1.5em; text-align:center;">Eliminar</span>
-                </a>
-              
-              </td>
-            </tr>
-          </table>
-        </td>
-      </tr>
-    </table>
-   </center>
+<table border="0" style="height: 15px; border-collapse: collapse; border-style: solid; margin-left: auto; margin-right: auto;" cellspacing="5">
+  <tbody>
+  <tr style="height: 18px;">
+  <td style="font-size:12px; background-color: #FFA4A4; width:80px ; height: 10px; text-align: center;"><a href="{% url 'del_post' post.id %}" target="_self">Eliminar</a></td>
+  <td style="font-size:12px; background-color: #E7E7E7; width:80px ; height: 10px; text-align: center;"><a href="{% url 'edit_post' post.id %}" target="_self">Editar</a></td>
+  </tr>
+  </tbody>
+  </table>
 
-<!--Button Editar
-<center>
-    <table align="center" cellspacing="0" cellpadding="0" width="100%">
-      <tr>
-        <td align="right" style="padding: 10px;">
-          <table border="0" class="mobile-button" cellspacing="0" cellpadding="0">
-            <tr>
-              <td align="right" bgcolor="#3393e9" style="background-color: #3393e9; margin: auto; max-width: 600px; -webkit-border-radius: 10px; -moz-border-radius: 10px; border-radius: 10px; padding: 15px 20px; " width="100%">
-              
-                  <a href="{% url 'edit_post' post.id %}" target="_self" style="13px; font-family: Century Gothic, Times, serif; color: #ffffff; font-weight:normal; text-align:center; background-color: #3393e9; text-decoration: none; border: none; -webkit-border-radius: 10px; -moz-border-radius: 10px; border-radius: 10px; display: inline-block;">
-                      <span style="font-size: 13px; font-family: Century Gothic, Times, serif; color: #ffffff; font-weight:normal; line-height:1.5em; text-align:center;">Editar</span>
-                </a> 
-              
-              </td>
-            </tr>
-          </table>
-        </td>
-      </tr>
-    </table>
-   </center> -->
-
-   
-
+ <br>
+ 
 <a href= "{% url 'read_more' post.id %}"> {{ post.content | slice:100 }}... <sub style="color: red"><em>Leer más</em></sub></a>
 
 <p style="text-align: right;"><sub><em>Fecha de publicación: {{post.date}}</em></sub></p>
-  
+
+{% empty %}
+<p style="text-align: center;"><strong> Aún no hay contenido en esta sección </strong></p>
+        <br>
+        <br>
+        <br> 
 
 
 {% endfor %}
+
 
 {% endblock %}
