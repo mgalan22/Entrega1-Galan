@@ -19,7 +19,7 @@ Lista de publicaciones
 <!--Button eliminar-->
 
 
-<center>
+<!-- <center>
     <table align="right" cellspacing="0" cellpadding="0" width="100%">
       <tr>
         <td align="right" style="padding: 10px;">
@@ -39,7 +39,7 @@ Lista de publicaciones
     </table>
    </center>
 
-<!--Button Editar-->
+<!--Button Editar
 <center>
     <table align="center" cellspacing="0" cellpadding="0" width="100%">
       <tr>
@@ -50,7 +50,7 @@ Lista de publicaciones
               
                   <a href="{% url 'edit_post' post.id %}" target="_self" style="13px; font-family: Century Gothic, Times, serif; color: #ffffff; font-weight:normal; text-align:center; background-color: #3393e9; text-decoration: none; border: none; -webkit-border-radius: 10px; -moz-border-radius: 10px; border-radius: 10px; display: inline-block;">
                       <span style="font-size: 13px; font-family: Century Gothic, Times, serif; color: #ffffff; font-weight:normal; line-height:1.5em; text-align:center;">Editar</span>
-                </a>
+                </a> 
               
               </td>
             </tr>
@@ -58,11 +58,11 @@ Lista de publicaciones
         </td>
       </tr>
     </table>
-   </center>
+   </center> -->
 
    
 
-<p>{{ post.content }}</p>
+<a href= "{% url 'read_more' post.id %}"> {{ post.content | slice:100 }}... <sub style="color: red"><em>Leer más</em></sub></a>
 
 <p style="text-align: right;"><sub><em>Fecha de publicación: {{post.date}}</em></sub></p>
   

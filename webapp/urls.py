@@ -11,4 +11,5 @@ urlpatterns = [
     path('del_post/<int:id>',del_post, name='del_post'),
     path('edit_post/<int:post_id>',edit_post, name='edit_post'),
     path('about/', about_me, name='about'),
+    path('post/<int:post_id>', read_more, name='read_more'),
 ]

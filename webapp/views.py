@@ -86,7 +86,17 @@ def edit_post(request, post_id):
 
     return render(request,'webapp/update_form.html', ctx)
 
+def read_more(request, post_id):
+    post=Post.objects.get(id=post_id)
 
+    ctx={
+        'id' : post.id,
+        'title': post.title,
+        'content': post.content,
+        'date': post.date
+    }
+
+    return render(request, 'webapp/post.html', ctx)
     
 def read_me(request):
     return render(request, 'webapp/readme.md')
