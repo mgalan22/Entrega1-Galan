@@ -2,7 +2,7 @@
 
 _Se intenta cumplir con los requisitos básicos para el funcionamiento de un blog en linea_
 
-_El repositorio de la entrega final es el fork **entrega-final**_
+_El repositorio de la entrega final es el fork **entrega_final_1022**_
 
 ### Pre-requisitos 📋
 
