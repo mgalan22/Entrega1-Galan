@@ -42,8 +42,8 @@ INSTALLED_APPS = [
     'webapp',
     'userapp',
     'whitenoise.runserver_nostatic',
-    'ckeditor',
-    'ckeditor_uploader',
+    #'ckeditor',
+    #'ckeditor_uploader',
     
 ]
 
