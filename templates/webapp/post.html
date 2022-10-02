@@ -11,18 +11,31 @@
 
 
 {% block content2 %}
+<table border="0" style="height: auto; width: 100%; border-collapse: collapse; border-style: none; margin-left: auto; margin-right: auto;" cellpadding="0" cellspacing="0">
+    <tbody>
+    <tr>
+    <td style="width: 100%; text-align: right;"><sub><em>Autor: {{author}}</em></sub></td>
+    </tr>
+    <tr>
+    <td style="width: 100%; text-align: right;"><sub><em>Fecha de publicación: {{date}}</em></sub></td>
+    </tr>
+    </tbody>
+    </table>
+    <br>
+    <br>
 
+<h4 style="color: gray; text-align: center;"><em>{{ subtitle }}</em></h4>
+<br>
+<center><img align=center width=400px src="{{ image.url }} "></center>
+
+<br>
+<br>
+<br>
 {{ content }}
 <br>
 <br>
 <br>
-<img width=400px src="{{ image.url }} ">
 
-<br>
-<br>
-<br>
 
-<p style="text-align: right;"><sub><em>Autor: {{author}}</em></sub></p>
-<p style="text-align: right;"><sub><em>Fecha de publicación: {{date}}</em></sub></p>
 
 {% endblock %}

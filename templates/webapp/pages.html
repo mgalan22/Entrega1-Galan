@@ -12,21 +12,29 @@ Lista de publicaciones
 
 {% block content2 %}
 
-{% for post in post %}
+{% for post in posts %}
 
+<br>
+<br>
 
 <h2 style="text-align: center;"><strong>{{post.id}} - {{ post.title }}</strong></h2>
-<h4 style="color: gray; text-align: center;"><em>{{ post.subtitle }}</em></h4>
-
-<br>
 <br>
 
- 
- 
 <a href= "{% url 'read_more' post.id %}"> {{ post.content | slice:120 }}... <sub style="color: red"><em>Leer más</em></sub></a>
 
-<p style="text-align: right;"><sub><em>Autor: {{post.author}}</em></sub></p>
-<p style="text-align: right;"><sub><em>Fecha de publicación: {{post.date}}</em></sub></p>
+<table border="0" style="height: auto; width: 100%; border-collapse: collapse; border-style: none; margin-left: auto; margin-right: auto;" cellpadding="0" cellspacing="0">
+  <tbody>
+  <tr>
+  <td style="width: 100%; text-align: right;"><sub><em>Autor: {{post.author}}</em></sub></td>
+  </tr>
+  <tr>
+  <td style="width: 100%; text-align: right;"><sub><em>Fecha de publicación: {{post.date}}</em></sub></td>
+  </tr>
+  </tbody>
+  </table>
+
+  <hr class="my-4" />
+
 <!-- botones eliminar editar-->
 
   
@@ -39,12 +47,13 @@ Lista de publicaciones
     </tr>
     </tbody>
     </table>
- {% endif %}
+<br>
+{% endif %}
  
   
   
 {% empty %}
-<p style="text-align: center;"><strong> Aún no hay contenido en esta sección </strong></p>
+<p style="text-align: center;"><strong> No se encontraron resultados </strong></p>
         <br>
         <br>
         <br> 

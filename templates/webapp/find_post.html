@@ -13,8 +13,8 @@ Buscar publicación por título
 {% block content2 %}
 <h1>Que necesitas encontrar?</h1>
 
-<form action="/webapp/found_posts" method="GET">
-    {% csrf_token %}
+<form action="{% url 'found_posts' %}" method="GET">
+{% csrf_token %}
 
 {{ form.as_p }}
 
@@ -22,7 +22,5 @@ Buscar publicación por título
 <input type="submit" value="Buscar">
 
 </form>
-
-
 
 {% endblock %}

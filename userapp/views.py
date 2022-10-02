@@ -1,3 +1,4 @@
+from asyncio.windows_events import NULL
 from django.shortcuts import render, redirect
 from django.contrib.auth.forms import AuthenticationForm, UserCreationForm
 from django.contrib.auth import authenticate,login
@@ -21,7 +22,11 @@ def login_request(request):
 
             if user:
                 login(request, user)
-                messages.info(request, 'Inicio de sesion satisfactorio!')
+                
+                if user.first_name == "":
+                    messages.info(request, f'Iniciaste sesión! Bienvenido {user}')
+                else:
+                    messages.info(request, f'Iniciaste sesión! Bienvenido {user.first_name}')
 
             else:
                 messages.info(request, 'inicio de sesion fallido!')

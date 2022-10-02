@@ -14,7 +14,7 @@ Nueva publicación
 <h1>Carga tu publicacion</h1>
 
 <form action="{% url 'post_form' %}" method="POST" enctype="multipart/form-data">
-    {% csrf_token %}
+{% csrf_token %}
 
 {{ form.as_p }}
 

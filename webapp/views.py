@@ -38,14 +38,14 @@ def post_form(request):
     
 def all_posts(request):
    
-   post= Post.objects.all()
-   ctx={'post': post}
+   posts= Post.objects.all()
+   ctx={'posts': posts}
 
    return render(request, 'webapp/pages.html',ctx)
 
 def find_post(request):
 
-    ctx={ 'form':SearchPost() }
+    ctx={ 'form':SearchPost(), }
 
     return render(request,'webapp/find_post.html',ctx )
 
@@ -103,6 +103,7 @@ def read_more(request, post_id):
     ctx={
         'id' : post.id,
         'title': post.title,
+        'subtitle': post.subtitle,
         'content': post.content,
         'image' : post.image,
         'date': post.date,

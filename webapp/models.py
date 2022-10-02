@@ -3,8 +3,8 @@ from django.db import models
 class Post(models.Model):
     id=models.AutoField(primary_key=True)
     #active=models.BooleanField(default=True)
-    title=models.CharField(max_length=50)
-    subtitle=models.CharField(max_length=100)
+    title=models.CharField(max_length=200)
+    subtitle=models.CharField(max_length=200)
     content=models.TextField()
     date=models.DateField()
     image=models.ImageField(upload_to='images/', null=True, blank= True)
