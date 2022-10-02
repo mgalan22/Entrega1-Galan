@@ -57,11 +57,11 @@ del modelo **Posts**
 _Tratandose de un proyecto en desarrollo, hay elementos que aún no tienen uso, y herencias que se deben mejorar_
 
 * ~~Se utiliza mal el template index.html en home.html, se debe eliminar contenido y corregir herencias.~~
-* Se debe cambiar en el modelo Posts, la característica content, para que sea TextArea.
+* ~~Se debe cambiar en el modelo Posts, la característica content, para que sea TextArea.~~
 * Se debe integrar el modelo Post_categories, que permitirían asignar categorías a las publicaciones
 * Se debe desarrollar e integrar la característica category del modelo Posts para que se le pueda asignar de una lista desplegable la pertenencia.
 * Se debe desarrollar e integrar en BD el conteo de elementos de cada categoría para poder mostrar ese dato en las consultas
-* Se debe incorporar el botón para inicio de sesión/registro de usuarios que utilizaría el modelo Users
-* Cambiar la característica password de User para que se maneje como tal.
-* Agregar condicional para la búsqueda de publicaciones con resultado nulo.
+* ~~Se debe incorporar el botón para inicio de sesión/registro de usuarios que utilizaría el modelo Users~~
+* ~~Cambiar la característica password de User para que se maneje como tal.~~
+* ~~Agregar condicional para la búsqueda de publicaciones con resultado nulo.~~
 
