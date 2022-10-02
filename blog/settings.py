@@ -42,6 +42,9 @@ INSTALLED_APPS = [
     'webapp',
     'userapp',
     'whitenoise.runserver_nostatic',
+    'ckeditor',
+    'ckeditor_uploader',
+    
 ]
 
 
@@ -139,3 +142,5 @@ DATABASES['default'].update(db_form_env)
 
 STATIC_ROOT = BASE_DIR / "static"
 STATICFILES_DIRS = (os.path.join(BASE_DIR, 'webapp/static'),)
+
+#CKEDITOR_UPLOAD_PATH = "/media/uploads/"
