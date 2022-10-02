@@ -105,7 +105,8 @@ def read_more(request, post_id):
         'title': post.title,
         'content': post.content,
         'image' : post.image,
-        'date': post.date
+        'date': post.date,
+        'author':post.author
     }
 
     return render(request, 'webapp/post.html', ctx)

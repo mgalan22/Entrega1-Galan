@@ -13,12 +13,16 @@
 {% block content2 %}
 
 {{ content }}
-<img src="{{ image.url }} "></img>
+<br>
+<br>
+<br>
+<img width=400px src="{{ image.url }} ">
 
 <br>
 <br>
 <br>
 
+<p style="text-align: right;"><sub><em>Autor: {{author}}</em></sub></p>
 <p style="text-align: right;"><sub><em>Fecha de publicación: {{date}}</em></sub></p>
 
 {% endblock %}
