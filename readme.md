@@ -16,7 +16,7 @@ _revisar requeriments.txt_
 
 ## Pantallas y funcionalidades
 * _Se intentó agregar un módulo de edición de texto avanzado pero en el proceso la aplicación fallaba, por lo que desistí para aplicarlo habiendo adquirido mayores conocimientos_
-* _Se intentaron resolver algunas funcionalidades propuestas por el profesor pero por mis escasos conocimientos no pude lograrlo: Actualización de avatar existente, actualización de datos individuales del usuario, actualización del post CON imagen null
+* _Se intentaron resolver algunas funcionalidades propuestas por el profesor pero por mis escasos conocimientos no pude lograrlo: Actualización de avatar existente, actualización de datos individuales del usuario, actualización del post CON imagen null_
 
 
 ### - Redactar artículo
