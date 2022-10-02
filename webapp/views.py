@@ -1,5 +1,6 @@
 from datetime import datetime
 
+
 from django.shortcuts import render,redirect
 from webapp.forms import PostForm, SearchPost
 from webapp.models import Post
@@ -13,11 +14,19 @@ def home(request):
 @login_required
 def post_form(request):
     if request.method == 'POST':
-        formulario=PostForm(request.POST)
+        form=PostForm(request.POST, request.FILES)
 
-        if formulario.is_valid():
-            data = formulario.cleaned_data
-            new_post=Post(title=data.get('titulo'),content=data.get('contenido'), date= datetime.now())
+        if form.is_valid():
+            data = form.cleaned_data
+            new_post=Post(
+                title=data.get('titulo'),
+                subtitle=data.get('subtitulo'),
+                content=data.get('contenido'),
+                image=data.get('foto'),
+                date= datetime.now(),
+                author=request.user.username
+                )
+            
             new_post.save()
 
             return redirect('all_posts')
@@ -49,26 +58,28 @@ def found_posts(request):
 
     return render(request, 'webapp/pages.html',ctx)
 
-def del_post(request, id):
-    post_del = Post.objects.get(id=id)
-    post_del.delete()
-    messages.info(request, f"El post número {id}, fue eliminado")
+def del_post(request, post_id):
+    post= Post.objects.get(id = post_id)
+    post.delete()
+    messages.info(request, f"El post número {post_id}, fue eliminado")
 
     return redirect('all_posts')
 
+
 def edit_post(request, post_id):
     
-    post_to_edit= Post.objects.get(id=post_id)
+    post= Post.objects.get(id=post_id)
 
 
     if request.method == 'POST':
-        formulario=PostForm(request.POST)
+        form=PostForm(request.POST)
 
-        if formulario.is_valid():
-            data = formulario.cleaned_data
+        if form.is_valid():
+            data = form.cleaned_data
             
             Post.objects.filter(id=post_id).update(
             title=data.get('titulo'),
+            subtitle=data.get('subtitulo'),
             content=data.get('contenido'),
             date=datetime.now()
             ) 
@@ -77,8 +88,8 @@ def edit_post(request, post_id):
 
             return redirect('all_posts')
     
-    ctx={'form':PostForm(initial={'titulo': post_to_edit.title,
-               'contenido': post_to_edit.content
+    ctx={'form':PostForm(initial={'titulo': post.title, 'subtitulo':post.subtitle,
+               'contenido': post.content
                 }
             )}
         
@@ -93,6 +104,7 @@ def read_more(request, post_id):
         'id' : post.id,
         'title': post.title,
         'content': post.content,
+        'image' : post.image,
         'date': post.date
     }
 

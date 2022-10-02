@@ -142,6 +142,7 @@
       <a class="list-inline-item" href="{% url 'user_edit' %}">Conectado como: {{ user.get_username }}</a></td>
       
       <td style="width: 60px;"><img align="center" src="{{ user.avatar.image.url }}" alt="" width="40"></td>
+      <td style="width: 60px;"><a style="font-size=8px ;" href="{% url 'upload_avatar' %}" width="40">Cambiar Foto</a></td>
       
       <td style="width: 260px;"><a style="color: #c82828;" class="list-inline-item" href="{% url 'logout' %}">Logout</a></td>
       

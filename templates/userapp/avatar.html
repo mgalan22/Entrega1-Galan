@@ -1,0 +1,25 @@
+{% extends "index.html" %}
+
+{% block title %}
+{{ nombre_form }}
+{% endblock title %}
+
+{% block post_title %}
+{{ nombre_form }}
+{% endblock post_title %}
+
+
+
+{% block content2 %}
+
+<form action="" method="POST" enctype="multipart/form-data">
+    {% csrf_token %}
+
+{{ form.as_p }}
+
+
+<input type="submit" value="{{ nombre_form }}">
+
+</form>
+
+{% endblock %}

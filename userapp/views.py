@@ -112,7 +112,7 @@ def upload_avatar(request):
 
             data = form.cleaned_data
             avatar = Avatar.objects.filter(user=data.get("user"))
-
+            
             if len(avatar) > 0:
                 avatar = avatar[0]
                 avatar.image = form.cleaned_data["image"]
@@ -121,7 +121,8 @@ def upload_avatar(request):
             else:
                 avatar = Avatar(user=data.get("user"), image=data.get("image"))
                 avatar.save()
-
+        else:
+            print(form.errors)
         return redirect('home')
 
     ctx = {
@@ -129,4 +130,4 @@ def upload_avatar(request):
         "nombre_form" : 'Subir imagen'
     }
 
-    return render(request, "userapp/login.html", ctx)
+    return render(request, "userapp/avatar.html", ctx)

@@ -15,26 +15,34 @@ Lista de publicaciones
 {% for post in post %}
 
 
-<h2 style="text-align: center;"><strong>{{post.id}} - {{ post.title }}</strong></h2></a>
+<h2 style="text-align: center;"><strong>{{post.id}} - {{ post.title }}</strong></h2>
+<h4 style="color: gray; text-align: center;"><em>{{ post.subtitle }}</em></h4>
 
-<!-- botones eliminar editar-->
+<br>
 <br>
 
-<table border="0" style="height: 15px; border-collapse: collapse; border-style: solid; margin-left: auto; margin-right: auto;" cellspacing="5">
-  <tbody>
-  <tr style="height: 18px;">
-  <td style="font-size:12px; background-color: #FFA4A4; width:80px ; height: 10px; text-align: center;"><a href="{% url 'del_post' post.id %}" target="_self">Eliminar</a></td>
-  <td style="font-size:12px; background-color: #E7E7E7; width:80px ; height: 10px; text-align: center;"><a href="{% url 'edit_post' post.id %}" target="_self">Editar</a></td>
-  </tr>
-  </tbody>
-  </table>
-
- <br>
  
-<a href= "{% url 'read_more' post.id %}"> {{ post.content | slice:100 }}... <sub style="color: red"><em>Leer más</em></sub></a>
+ 
+<a href= "{% url 'read_more' post.id %}"> {{ post.content | slice:120 }}... <sub style="color: red"><em>Leer más</em></sub></a>
 
+<p style="text-align: right;"><sub><em>Autor: {{post.author}}</em></sub></p>
 <p style="text-align: right;"><sub><em>Fecha de publicación: {{post.date}}</em></sub></p>
+<!-- botones eliminar editar-->
 
+  
+  {% if user.get_username == post.author %}
+  <table border="0" style="height: 15px; border-collapse: collapse; border-style: solid; margin-left: auto; margin-right: 0px;" cellspacing="5">
+  <tbody>
+    <tr style="height: 18px;">
+    <td style="font-size:12px; background-color: #FFA4A4; width:80px ; height: 10px; text-align: center;"><a href="{% url 'del_post' post.id %}" target="_self">Eliminar</a></td>
+    <td style="font-size:12px; background-color: #E7E7E7; width:80px ; height: 10px; text-align: center;"><a href="{% url 'edit_post' post.id %}" target="_self">Editar</a></td>
+    </tr>
+    </tbody>
+    </table>
+ {% endif %}
+ 
+  
+  
 {% empty %}
 <p style="text-align: center;"><strong> Aún no hay contenido en esta sección </strong></p>
         <br>
