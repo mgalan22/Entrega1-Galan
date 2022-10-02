@@ -2,7 +2,7 @@
 
 _Se intenta cumplir con los requisitos básicos para el funcionamiento de un blog en linea_
 
-_El repositorio de la entrega final es el fork **entrega_final_1022**_
+_El repositorio de la entrega final es el fork **entrega_final_heroku**_
 
 ### Pre-requisitos 📋
 
@@ -15,6 +15,8 @@ _revisar requeriments.txt_
 - El sitio utiliza a index.html en el directorio **/templates** para tomar las herencias de diseño y CSS.
 
 ## Pantallas y funcionalidades
+* _Se intentó agregar un módulo de edición de texto avanzado pero en el proceso la aplicación fallaba, por lo que desistí para aplicarlo habiendo adquirido mayores conocimientos_
+* _Se intentaron resolver algunas funcionalidades propuestas por el profesor pero por mis escasos conocimientos no pude lograrlo: Actualización de avatar existente, actualización de datos individuales del usuario, actualización del post CON imagen null
 
 
 ### - Redactar artículo
